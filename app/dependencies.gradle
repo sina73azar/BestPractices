@@ -1,0 +1,7 @@
+ext{
+    coroutineVersion = '1.5.2'
+    coroutineDependencies = [
+            core: "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutineVersion",
+            android: "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutineVersion"
+    ]
+}
