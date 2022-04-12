@@ -29,7 +29,6 @@ object DataBaseModule {
         ).build()
     }
     @Provides
-
     fun provideStudentDao(myDatabase: MyDatabase): StudentDao {
         return myDatabase.studentDao()
     }

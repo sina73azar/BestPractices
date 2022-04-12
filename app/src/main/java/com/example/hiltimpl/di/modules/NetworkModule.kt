@@ -77,9 +77,6 @@ object NetworkModule {
         return Volley.newRequestQueue(appContext)
     }
 
-    @Singleton
-    @Provides
-    fun providePhotoRepo(requestQueue: RequestQueue):PhotoRepo=
-        PhotoRepo(requestQueue)
+
 
 }
