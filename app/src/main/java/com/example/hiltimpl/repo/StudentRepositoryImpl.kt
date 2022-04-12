@@ -1,7 +1,7 @@
 package com.example.hiltimpl.repo
 
 import com.example.hiltimpl.domain.Student
-import com.example.hiltimpl.data.StudentDao
+import com.example.hiltimpl.data.api.StudentDao
 import javax.inject.Inject
 
 class StudentRepositoryImpl @Inject constructor(

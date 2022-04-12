@@ -1,4 +1,4 @@
-package com.example.hiltimpl.di
+package com.example.hiltimpl.di.interceptors
 
 import okhttp3.Interceptor
 import okhttp3.Response

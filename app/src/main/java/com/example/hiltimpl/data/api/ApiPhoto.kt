@@ -1,5 +1,6 @@
-package com.example.hiltimpl.data
+package com.example.hiltimpl.data.api
 
+import com.example.hiltimpl.domain.Photo
 import retrofit2.Response
 import retrofit2.http.GET
 

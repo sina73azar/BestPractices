@@ -1,18 +1,15 @@
 package com.example.hiltimpl.presentation.photo
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.annotation.UiThread
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.hiltimpl.R
-import com.example.hiltimpl.di.events.SuccessEvent
-import com.example.hiltimpl.di.events.UnauthorizedEvent
+import com.example.hiltimpl.di.events.NetworkEvents
 import dagger.hilt.android.AndroidEntryPoint
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
@@ -25,7 +22,6 @@ class PhotoFragment : Fragment() {
 //    private val binding:
 
     private val model: PhotoViewModel by viewModels()
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -54,18 +50,17 @@ class PhotoFragment : Fragment() {
         EventBus.getDefault().unregister(this);
     }
     @Subscribe(threadMode = ThreadMode.MAIN)
-    fun onUnauthorizedEvent(e: UnauthorizedEvent?) {
-        handleUnauthorizedEvent()
+    fun onNetworkEvents(e: NetworkEvents) {
+        when (e) {
+            NetworkEvents.SUCCESS_EVENT->{Log.d(TAG, "onSuccessEvent: "+"با موفقیت جواب اومد...")}
+            NetworkEvents.UN_AUTHORIZED_EVENT->{handleUnauthorizedEvent()}
+
+        }
     }
     protected fun handleUnauthorizedEvent() {
         Toast.makeText(requireContext(), "تایید هویت صورت نگرفته", Toast.LENGTH_SHORT).show()
     }
-    @Subscribe(threadMode = ThreadMode.MAIN)
-    fun onSuccessEvent(e:SuccessEvent){
-        Toast.makeText(requireContext(), "با موفقیت جواب اومد...", Toast.LENGTH_SHORT).show()
-        Toast.makeText(requireContext(),e.toString(), Toast.LENGTH_SHORT).show()
-    }
-    
+
     companion object {
         private const val TAG = "PhotoFragment"
     }

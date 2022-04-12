@@ -1,4 +1,4 @@
-package com.example.hiltimpl.data
+package com.example.hiltimpl.data.api
 
 import androidx.room.Dao
 import androidx.room.Delete
