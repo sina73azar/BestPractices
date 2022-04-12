@@ -1,11 +1,10 @@
-package com.example.hiltimpl.di
+package com.example.hiltimpl.di.modules
 
 import android.content.Context
 import com.android.volley.RequestQueue
 import com.android.volley.toolbox.Volley
-import com.example.hiltimpl.data.ApiPhoto
-import com.example.hiltimpl.di.events.SuccessEvent
-import com.example.hiltimpl.di.events.UnauthorizedEvent
+import com.example.hiltimpl.data.api.ApiPhoto
+import com.example.hiltimpl.di.interceptors.UnAthorizedInterceptor
 import com.example.hiltimpl.repo.PhotoRepo
 import dagger.Module
 import dagger.Provides
@@ -26,8 +25,8 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideUnathorizedInterceptor():UnAthorizedInterceptor{
-        return UnAthorizedInterceptor(UnauthorizedEvent(),SuccessEvent())
+    fun provideUnathorizedInterceptor(): UnAthorizedInterceptor {
+        return UnAthorizedInterceptor()
     }
 
     @Singleton
@@ -67,7 +66,7 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideApiPhoto(retrofit: Retrofit):ApiPhoto{
+    fun provideApiPhoto(retrofit: Retrofit): ApiPhoto {
        return retrofit.create(ApiPhoto::class.java)
     }
 
@@ -78,9 +77,6 @@ object NetworkModule {
         return Volley.newRequestQueue(appContext)
     }
 
-    @Singleton
-    @Provides
-    fun providePhotoRepo(requestQueue: RequestQueue):PhotoRepo=
-        PhotoRepo(requestQueue)
+
 
 }

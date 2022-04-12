@@ -18,11 +18,9 @@ class NoteAdapter:RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteViewHolder {
         return NoteViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.note_item_card,parent,false))
     }
-
     override fun onBindViewHolder(holder: NoteViewHolder, position: Int) {
         holder.bind(oldList[position])
     }
-
     override fun getItemCount(): Int {
         return oldList.size
     }

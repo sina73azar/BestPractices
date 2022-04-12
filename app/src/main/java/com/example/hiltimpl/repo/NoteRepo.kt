@@ -1,6 +1,6 @@
 package com.example.hiltimpl.repo
 
-import com.example.hiltimpl.data.NoteDao
+import com.example.hiltimpl.data.api.NoteDao
 import com.example.hiltimpl.domain.Note
 import javax.inject.Inject
 

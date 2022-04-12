@@ -59,12 +59,6 @@ class MainViewModel @Inject constructor(
         }
     }
 
-    fun getAllPhotos() {
-        viewModelScope.launch {
-            photoRepo.getAllPhotos(getAllPhotosRequest())
-        }
-    }
-
     val allNotes: LiveData<List<Note>> = liveData(context = Dispatchers.Default) {
         emit(noteRepo.getAllNotes())
     }
@@ -75,20 +69,7 @@ class MainViewModel @Inject constructor(
         }
     }
 
-    private fun getAllPhotosRequest(): StringRequest {
-        return StringRequest(
-            Request.Method.GET, BASE_URL,
-            {
-                Log.d("MainModel", "response----------------------------------------> ")
-                Log.d("MainModel", "${it.length} ")
-                _allPhotosString.postValue(it)
-//                    doSomethingWith20(it)
-            },
-            {
 
-            })
-
-    }
 
     private var _curNote: MutableLiveData<String> = MutableLiveData()
     val curNote: LiveData<String> = _curNote

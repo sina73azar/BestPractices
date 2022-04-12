@@ -1,16 +1,15 @@
 package com.example.hiltimpl.repo
 
-import com.android.volley.RequestQueue
-import com.android.volley.toolbox.StringRequest
+
+import com.example.hiltimpl.data.api.ApiPhoto
+import com.example.hiltimpl.domain.Photo
+import retrofit2.Response
 import javax.inject.Inject
 
+
 class PhotoRepo @Inject constructor(
-    private val requestQueue: RequestQueue,
-) {
+    private val apiPhoto: ApiPhoto
+){
 
-    fun getAllPhotos(request:StringRequest){
-        requestQueue.add(request)
-    }
-
-
+    suspend fun getAllPhotos(): Response<List<Photo>> = apiPhoto.getAllPhotos()
 }

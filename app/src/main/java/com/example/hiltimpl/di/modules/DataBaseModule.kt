@@ -1,10 +1,10 @@
-package com.example.hiltimpl.di
+package com.example.hiltimpl.di.modules
 
 import android.content.Context
 import androidx.room.Room
 import com.example.hiltimpl.data.MyDatabase
-import com.example.hiltimpl.data.NoteDao
-import com.example.hiltimpl.data.StudentDao
+import com.example.hiltimpl.data.api.NoteDao
+import com.example.hiltimpl.data.api.StudentDao
 import com.example.hiltimpl.repo.NoteRepo
 import com.example.hiltimpl.repo.StudentRepositoryImpl
 import dagger.Module
@@ -29,7 +29,6 @@ object DataBaseModule {
         ).build()
     }
     @Provides
-
     fun provideStudentDao(myDatabase: MyDatabase): StudentDao {
         return myDatabase.studentDao()
     }
