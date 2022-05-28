@@ -1,9 +1,6 @@
 package com.example.hiltimpl.presentation.home
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.example.hiltimpl.repo.NoteRepo
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -20,4 +17,11 @@ class ListNoteViewModel @Inject constructor(
     fun setCurNote(noteName:String){
         _curNote.value=noteName
     }
+
+    private var tokenAcceppted: MutableLiveData<Boolean> = MutableLiveData(false)
+    lateinit var tokenStateLiveData:LiveData<Boolean>
+
+/*    fun getTokenState():LiveData<Boolean>{
+        Transformations.switchMap()
+    }*/
 }

@@ -28,5 +28,10 @@
         android:name="com.example.hiltimpl.presentation.photo.PhotoFragment"
         android:label="fragment_photo"
         tools:layout="@layout/fragment_photo" />
+    <fragment
+        android:id="@+id/dragDropFragment"
+        android:name="com.example.hiltimpl.DragDropFragment"
+        android:label="fragment_drag_drop"
+        tools:layout="@layout/fragment_drag_drop" />
 
 </navigation>
