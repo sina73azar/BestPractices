@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_listNotesFragment_to_photoFragment"
             app:destination="@id/photoFragment" />
+        <action
+            android:id="@+id/action_listNotesFragment_to_dragAndDropQuestionFragment"
+            app:destination="@id/dragAndDropQuestionFragment" />
     </fragment>
     <fragment
         android:id="@+id/photoFragment"
@@ -33,5 +36,9 @@
         android:name="com.example.hiltimpl.DragDropFragment"
         android:label="fragment_drag_drop"
         tools:layout="@layout/fragment_drag_drop" />
+    <fragment
+        android:id="@+id/dragAndDropQuestionFragment"
+        android:name="com.example.hiltimpl.presentation.drag_drop.DragAndDropQuestionFragment"
+        android:label="DragAndDropQuestionFragment" />
 
 </navigation>

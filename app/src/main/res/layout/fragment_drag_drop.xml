@@ -32,6 +32,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"/>
+        <View
+            android:layout_width="10dp"
+            android:layout_height="match_parent"/>
+        <ImageView
+            android:id="@+id/drag_View3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+        <View
+            android:layout_width="10dp"
+            android:layout_height="match_parent"/>
+        <ImageView
+            android:id="@+id/drag_View4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
     </LinearLayout>
 
     <LinearLayout

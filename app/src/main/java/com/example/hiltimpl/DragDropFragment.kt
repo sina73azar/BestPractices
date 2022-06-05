@@ -3,14 +3,14 @@ package com.example.hiltimpl
 import android.content.ClipData
 import android.content.ClipDescription
 import android.os.Bundle
+import android.util.AttributeSet
 import android.util.Log
-import android.view.DragEvent
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.LinearLayout
+import android.widget.TextView
 import android.widget.Toast
+import androidx.compose.ui.graphics.Color
 import com.example.hiltimpl.databinding.FragmentDragDropBinding
 
 
@@ -32,12 +32,14 @@ class DragDropFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.dragView1.setImageResource(R.drawable.gooloole)
-        binding.dragView2.setImageResource(R.drawable.goodoole)
+        binding.dragView1.setImageResource(R.drawable.ic_launcher_foreground)
+        binding.dragView2.setImageResource(R.drawable.ic_launcher_foreground)
+        binding.dragView3.setImageResource(R.drawable.ic_launcher_foreground)
+        binding.dragView4.setImageResource(R.drawable.ic_launcher_foreground)
         binding.llTop.setOnDragListener(dragListener)
         binding.llBottom.setOnDragListener(dragListener)
         binding.dragView1.setOnLongClickListener {
-            val clipText = "gooloole"
+            val clipText = "11"
             val item = ClipData.Item(clipText)
             val mimeTypes = arrayOf(ClipDescription.MIMETYPE_TEXT_PLAIN)
             val data = ClipData(clipText, mimeTypes, item)
@@ -48,7 +50,29 @@ class DragDropFragment : Fragment() {
             true
         }
         binding.dragView2.setOnLongClickListener {
-            val clipText = "goodoole"
+            val clipText = "22"
+            val item = ClipData.Item(clipText)
+            val mimeTypes = arrayOf(ClipDescription.MIMETYPE_TEXT_PLAIN)
+            val data = ClipData(clipText, mimeTypes, item)
+
+            val dragShadowBuilder = View.DragShadowBuilder(it)
+            it.startDragAndDrop(data, dragShadowBuilder, it, 0)
+            it.visibility=View.INVISIBLE
+            true
+        }
+        binding.dragView3.setOnLongClickListener {
+            val clipText = "33"
+            val item = ClipData.Item(clipText)
+            val mimeTypes = arrayOf(ClipDescription.MIMETYPE_TEXT_PLAIN)
+            val data = ClipData(clipText, mimeTypes, item)
+
+            val dragShadowBuilder = View.DragShadowBuilder(it)
+            it.startDragAndDrop(data, dragShadowBuilder, it, 0)
+            it.visibility=View.INVISIBLE
+            true
+        }
+        binding.dragView4.setOnLongClickListener {
+            val clipText = "44"
             val item = ClipData.Item(clipText)
             val mimeTypes = arrayOf(ClipDescription.MIMETYPE_TEXT_PLAIN)
             val data = ClipData(clipText, mimeTypes, item)
@@ -85,10 +109,16 @@ class DragDropFragment : Fragment() {
                 val item = dragEvent.clipData.getItemAt(0)
                 Toast.makeText(requireContext(), "${item.text}", Toast.LENGTH_SHORT).show()
                 view.invalidate()
+
                 val v = dragEvent.localState as View
                 val owner = v.parent as ViewGroup
                 owner.removeView(v)
                 val destination = view as LinearLayout
+                destination.gravity=Gravity.CENTER
+                val textView=TextView(requireContext())
+                textView.text=item.text
+                textView.setTextColor(R.color.black)
+                destination.addView(textView)
                 destination.addView(v)
                 v.visibility = View.VISIBLE
                 true

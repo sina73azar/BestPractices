@@ -82,6 +82,9 @@ class ListNotesFragment : Fragment() {
     }
 
     private fun onClicks() {
+        binding.btnDragDrop.setOnClickListener {
+            findNavController().navigate(R.id.action_listNotesFragment_to_dragAndDropQuestionFragment)
+        }
         binding.imgStar.setOnClickListener {
             findNavController().navigate(R.id.dragDropFragment)
         }

@@ -3,7 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidProjectss/HiltImpl/app/src/main/res/drawable/background_button_common.xml" value="0.129" />
+        <entry key="..\:/AndroidProjectss/HiltImpl/app/src/main/res/drawable/background_dashed_bucket.xml" value="0.116" />
+        <entry key="..\:/AndroidProjectss/HiltImpl/app/src/main/res/drawable/background_linear_bucket.xml" value="0.134" />
+        <entry key="..\:/AndroidProjectss/HiltImpl/app/src/main/res/drawable/ic_apple_eat_fruit.xml" value="0.1445" />
+        <entry key="..\:/AndroidProjectss/HiltImpl/app/src/main/res/drawable/ic_arrow_left_mdpi.xml" value="0.1535" />
         <entry key="..\:/AndroidProjectss/HiltImpl/app/src/main/res/layout/activity_main.xml" value="0.1734375" />
+        <entry key="..\:/AndroidProjectss/HiltImpl/app/src/main/res/layout/fragment_drag_and_drop_question.xml" value="0.2" />
+        <entry key="..\:/AndroidProjectss/HiltImpl/app/src/main/res/layout/fragment_drag_drop.xml" value="0.1734375" />
         <entry key="..\:/AndroidProjectss/HiltImpl/app/src/main/res/layout/fragment_list_notes.xml" value="0.1734375" />
         <entry key="..\:/AndroidProjectss/HiltImpl/app/src/main/res/layout/fragment_photo.xml" value="0.1734375" />
         <entry key="..\:/AndroidStudioProjects/HiltImpl/app/src/main/res/layout/activity_main.xml" value="0.21" />

@@ -4,4 +4,8 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="login">login</string>
+    <string name="next_question">سوال بعدی</string>
+    <string name="question">question question question....?</string>
+    <string name="drag_drop">drag drop</string>
+    <string name="name">taklif</string>
 </resources>
